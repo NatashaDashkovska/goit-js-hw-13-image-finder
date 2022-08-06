@@ -1,0 +1,41 @@
+{
+  "name": "goit-js-hw-13-image-finder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "parcel src/*.html",
+    "build": "parcel build src/*.html --public-url /goit-js-hw-13-image-finder/",
+    "predeploy": "npm run build",
+    "deploy": "netlify deploy -p",
+    "netlify": "netlify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NatashaDashkovska/goit-js-hw-13-image-finder.git"
+  },
+  "keywords": [],
+  "author": "NatashaDashkovska <na.dashkovska@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NatashaDashkovska/goit-js-hw-13-image-finder/issues"
+  },
+  "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@inventory/parcel-plugin-handlebars": "^1.0.0",
+    "axios": "^0.21.4",
+    "handlebars": "^4.7.7",
+    "material-design-icons": "^3.0.1",
+    "node-sass": "^7.0.1",
+    "parcel-plugin-handlebars-precompile": "^1.0.2",
+    "parcel-bundler": "^1.12.5",
+    "parcel-plugin-nuke-dist": "^1.0.1"
+  },
+  "devDependencies": {
+    "cssnano": "^4.1.11",
+    "postcss": "^8.4.14",
+    "posthtml-include": "^1.7.4"
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead"
+}
