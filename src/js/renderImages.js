@@ -21,9 +21,8 @@ let queryWord = '';
 export function render(query, page) {
   return getImages(query, page)
     .then(res => {
-      console.log(page);
-      console.log(query);
       renderImageList(res.data.hits);
+      // console.log(res.data.hits);
       queryWord = query;
       queryPage = page;
     })
