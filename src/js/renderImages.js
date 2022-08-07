@@ -2,17 +2,32 @@ import { refs } from './refs';
 import imageTemplate from '../templates/image.hbs';
 import { getImages } from './apiService';
 
-export function renderImageList(list) {
-  refs.galleryRef.insertAdjacentHTML('beforeend', imageTemplate(list));
+import '@pnotify/core/dist/PNotify.css';
+import '@pnotify/core/dist/BrightTheme.css';
+import { error, defaultModules } from '@pnotify/core';
+import * as PNotifyDesktop from '@pnotify/desktop';
 
-  const timer = setTimeout(() => {
-    refs.btnRef.scrollIntoView({
-      behavior: 'smooth',
-      block: 'end',
+export function renderImageList(list) {
+  if (list.length === 0) {
+    error({
+      text: 'Try something else!',
+      modules: new Map([...defaultModules, [PNotifyDesktop, {}]]),
     });
-    refs.btnRef.classList.remove('hidden');
-    refs.upBtnRef.classList.remove('hidden');
-  }, 600);
+    refs.btnRef.classList.add('hidden');
+    refs.upBtnRef.classList.add('hidden');
+    return;
+  } else {
+    refs.galleryRef.insertAdjacentHTML('beforeend', imageTemplate(list));
+
+    const timer = setTimeout(() => {
+      refs.btnRef.scrollIntoView({
+        behavior: 'smooth',
+        block: 'end',
+      });
+      refs.btnRef.classList.remove('hidden');
+      refs.upBtnRef.classList.remove('hidden');
+    }, 600);
+  }
 }
 
 let queryPage = 1;

@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /goit-js-hw-13-image-finder/",
+    "build": "parcel build ",
     "predeploy": "npm run build",
     "deploy": "netlify deploy -p",
     "netlify": "netlify"
@@ -31,7 +31,9 @@
     "node-sass": "^7.0.1",
     "parcel-bundler": "^1.12.5",
     "parcel-plugin-handlebars-precompile": "^1.0.2",
-    "parcel-plugin-nuke-dist": "^1.0.1"
+    "parcel-plugin-nuke-dist": "^1.0.1",
+    "@pnotify/desktop": "^5.2.0",
+    "@pnotify/core": "^5.2.0"
   },
   "devDependencies": {
     "cssnano": "^4.1.11",
